@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
-import {Link, Route, NavLink, Switch} from 'react-router-dom'
+import {Link, Route, NavLink} from 'react-router-dom'
 import Home from './pages/Home'   // 路由组件
 import About from './pages/About' // 路由组件
-import Test from './pages/Test' // 路由组件
 import Header from './components/Header' // 一般组件
 import MyNavLink from './components/MyNavLink' // 一般组件
 
@@ -74,15 +73,9 @@ export default class App extends Component {
           <div className="col-xs-6">
             <div className="panel">
               <div className="panel-body">
-                  {/* 注册路由 */}
-                  {/* //! 如果不被 Switch 组件包裹，那么 /about 路径会配置两个路由组件，而且两个路由组件都会显示出来
-                      //! 但是一般来说一个路径只需要匹配一个路由组件就可以，Switch 可以让路由器匹配到一个路由组件后就停止工作，提高效率 （单一匹配）
-                  */}
-                  <Switch>
-                    <Route path="/home" component={Home} /> 
-                    <Route path="/about" component={About} />
-                    <Route path="/about" component={Test} />
-                  </Switch>
+                {/* 注册路由 */}
+                  <Route path="/home" component={Home} /> 
+                  <Route path="/about" component={About} />
               </div>
             </div>
           </div>
