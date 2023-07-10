@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {Route, Switch, Redirect} from 'react-router-dom'
+import {Route, Switch} from 'react-router-dom'
 import Home from './pages/Home'   // 路由组件
 import About from './pages/About' // 路由组件
 import Header from './components/Header' // 一般组件
@@ -49,7 +49,7 @@ export default class App extends Component {
           <div className="col-xs-2 col-xs-offset-2">
             <div className="list-group">
                 <MyNavLink to="/home">Home</MyNavLink>
-                <MyNavLink to="/about">About</MyNavLink>
+                <MyNavLink to="/about/a/b">About</MyNavLink>
                 {/* //! 默认的是模拟查询，导航栏可以多给，如果包含被注册的路由(只匹配开头)，就可以匹配上；但是少给就匹配不上 */}
                 {/* //! <Route exact /> 开启路由的严格匹配，严格匹配不能随便开，如果很多路径都往一个组件跳，才考虑严格匹配，因为开启严格匹配无法继续匹配二级路由 */}
             </div>
@@ -58,9 +58,8 @@ export default class App extends Component {
             <div className="panel">
               <div className="panel-body">
                   <Switch>
-                    <Route extre path="/home" component={Home} /> 
-                    <Route extre={true} path="/about" component={About} />
-                    <Redirect to="/home"/> {/* 如果都没有匹配上，就走 redirect  */}
+                    <Route exact path="/home" component={Home} /> 
+                    <Route exact={true} path="/about" component={About} />
                   </Switch>
               </div>
             </div>

@@ -2,8 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+
+  <!-- 问题：当使用多级路径的使用，如果强制刷新页面，会导致样式丢失，应为浏览器会去访问 localhost:3000/xxxx/css/bootstrap.css-->
+  <!-- 解决方案： 1. link rel="stylesheet" href="/css/bootstrap.css" /> 使用绝对路径 （常用）-->
+  <!--           2. 使用 %PUBLIC_URL% 在路径前 <link rel="stylesheet" href="%PUBLIC_URL%/css/bootstrap.css" /> （常用）-->
+  <!--           3. 使用 HashRouter -->
   <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-  <link rel="stylesheet" href="./css/bootstrap.css" />
+  <!-- <link rel="stylesheet" href="./css/bootstrap.css" /> -->
+  <!-- <link rel="stylesheet" href="/css/bootstrap.css" /> -->
+  <link rel="stylesheet" href="%PUBLIC_URL%/css/bootstrap.css" />
+
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
